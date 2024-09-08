@@ -9,3 +9,7 @@ export enum USERROLE {
   TEACHER = "TEACHER",
   STUDENT = "STUDENT",
 }
+
+export interface IUserMethods {
+  generateAuthToken(): string;
+}

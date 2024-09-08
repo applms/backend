@@ -1,10 +1,13 @@
-import mongoose, { model, Schema } from "mongoose";
+import mongoose, { Model, model, Schema } from "mongoose";
 import PasswordComplexity from "joi-password-complexity";
 import Joi from "joi";
+import jwt from "jsonwebtoken";
 
-import { IUser, USERROLE } from "../types/schema/userTypes";
+import { IUser, IUserMethods, USERROLE } from "../types/schema/userTypes";
 
-const userSchema = new Schema<IUser>({
+type UserModel = Model<IUser, {}, IUserMethods>;
+
+const userSchema = new Schema<IUser, UserModel, IUserMethods>({
   name: {
     type: String,
     required: true,
@@ -25,6 +28,14 @@ const userSchema = new Schema<IUser>({
   },
 });
 
+userSchema.methods.generateAuthToken = function () {
+  const token = jwt.sign(
+    { _id: this._id },
+    process.env.JWT_SECRET || "authjsonwebtokensecret"
+  );
+  console.log(token);
+  return token;
+};
 const User = model("User", userSchema);
 
 const complexityOptions = {
