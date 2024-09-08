@@ -1,0 +1,19 @@
+###
+POST http://localhost:3000/api/users/login
+Content-Type: application/json
+
+{
+  "name": "Mohamed kandad",
+  "email": "kandad@gmail.com",
+  "password": "123456"
+}
+
+###
+POST http://localhost:3000/api/users/register
+Content-Type: application/json
+
+{
+  "name": "Mohamed kandad",
+  "email": "kandads@gmail.com",
+  "password": "Sikas1@"
+}
