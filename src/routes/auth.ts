@@ -2,8 +2,7 @@ import express, { Request, Response } from "express";
 const router = express.Router();
 
 import { login } from "../controllers/auth";
-import { authorization } from "../middlewares/auth";
 
-router.post("/", authorization, login);
+router.post("/", login);
 
 export default router;

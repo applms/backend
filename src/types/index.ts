@@ -21,7 +21,7 @@ declare global {
         | Record<string, any>;
     }
     interface Request {
-      user?: keyable | JwtPayload;
+      user?: string | JwtPayload | undefined;
     }
   }
 }
