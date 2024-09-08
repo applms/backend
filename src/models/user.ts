@@ -30,7 +30,7 @@ const userSchema = new Schema<IUser, UserModel, IUserMethods>({
 
 userSchema.methods.generateAuthToken = function () {
   const token = jwt.sign(
-    { _id: this._id },
+    { _id: this._id, name: this.name, email: this.email },
     process.env.JWT_SECRET || "authjsonwebtokensecret"
   );
   console.log(token);

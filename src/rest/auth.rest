@@ -1,6 +1,8 @@
 ###
 POST http://localhost:3000/api/auth
 Content-Type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmRkYjQ2YzI5MjJiYjk5YmUyMTg4YzgiLCJuYW1lIjoiTW9oYW1lZCBrYW5kYWQiLCJlbWFpbCI6ImthbmRhZEBnbWFpbC5jb20iLCJpYXQiOjE3MjU4MzIwODN9.OX9i2XBI2Xb-rzLHc3yG52R74glGtoJjQoi3JGu4gIs
+
 
 {
   "email": "kandad@gmail.com",
