@@ -4,6 +4,8 @@ import mongoose from "mongoose";
 import bodyParser from "body-parser";
 import dotenv from "dotenv";
 
+import errorHandler from "./middlewares/error";
+
 import users from "./routes/users";
 import auth from "./routes/auth";
 
@@ -18,6 +20,8 @@ dotenv.config();
 
 app.use("/api/users", users);
 app.use("/api/auth", auth);
+
+app.use(errorHandler);
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log("listening on port ", port));

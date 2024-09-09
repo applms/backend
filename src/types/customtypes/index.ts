@@ -1,3 +1,3 @@
-export interface CustomError extends Error {
+export interface ICustomError extends Error {
   status?: number;
 }
